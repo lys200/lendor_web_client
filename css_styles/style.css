@@ -19,6 +19,8 @@ nav{
     height: 6vw;
     box-sizing: border-box;
     justify-content: space-between;
+    transition: all 0.4s;
+
 }
 .company_name{
     display: flex;

@@ -1,14 +1,15 @@
 .hero::before{
     background-image: url(../images/pexels-fauxels-3183197.jpg);
 }
+.hero{
+}
 .team_members{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     width: 100%;
     padding: 10%;
     box-sizing: border-box;
-    background-color: #1f1919;
-    background: radial-gradient(circle, #ffd53b63,#dfdbcfbb, #ffd53b63);
+    background: linear-gradient(to right, #a7a3a3, #72716ed3, rgb(155, 151, 151), #413f3cd3);
 }
 
 .team-member {
