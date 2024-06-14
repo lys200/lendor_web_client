@@ -1,0 +1,79 @@
+.hero_content h2{
+    font-size: 3vw;
+}
+.hero_content p{
+    font-size: 2vw;
+    margin-bottom: 7vw;
+}
+
+.hero::before {  
+    background-image: url('../images/img1.jpg');
+    background-size: cover;
+    background-position: center;
+    filter: blur(1px) brightness(0.7) grayscale(20%);
+    z-index: -1;
+}
+.offers-wrapper{
+    color: black;
+    padding: 2vw 10%;
+
+}
+.offers-wrapper h3{
+    text-align: center;
+    font-size: 2vw;
+    color: #ffd43b;
+    background-color: #333;
+    padding: 2vw;
+}
+h4{
+   text-align: center; 
+   background-color: #ffd43b;
+   padding: 1vw ;
+   color: #333;
+   font-weight: 800;
+   margin-top: 4vw;
+   font-size: 1.6vw;
+   text-decoration: underline;
+}
+.social_media{
+    width: 100%;
+    border-bottom: 1px solid #ffd43b;
+    margin-bottom: 2vw;
+}
+.social_icons{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+.social_icons svg{
+    height: 2.2vw;
+    width: 2vw;
+    margin: 0 1vw;
+    }
+    
+.social_icons svg:hover{
+    border-bottom: 2px solid #ffd43b;
+    filter: drop-shadow(0 0 5px #ffd43b);
+    width: 2.2vw;
+    height: 2.2vw;
+    transition: .3s ease-in-out;
+}
+
+footer{
+    background-color: black;
+    padding: 2vw;
+}
+.contact{
+    display: flex;
+    justify-content: space-evenly;
+    text-align: left;
+}
+.contacter h5{
+    color: #ffd43b;
+    font-size: 2vw;
+    margin: 0;
+}
+.mymap img{
+    height: 30vw;
+    width: 80%;
+    margin-bottom: 4vw;
+}

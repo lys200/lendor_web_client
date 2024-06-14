@@ -1,0 +1,253 @@
+body{
+    margin: 0;
+    font-family: 'Nanum Myeongjo';
+    color: white;
+    background-color: #eee;
+    transition: ease-in 0.3s;
+
+}
+svg{
+    margin-top: 0.5vw;
+    height: 4vw;
+    width: 4vw;
+}
+nav{
+    padding: 1vw 5vw 1vw 5vw;
+    background-color: #333;
+    display: flex;
+    max-width: 100%;
+    height: 6vw;
+    box-sizing: border-box;
+    justify-content: space-between;
+}
+.company_name{
+    display: flex;
+    width: 20%;
+    justify-content: space-evenly;
+    align-items: center;
+    font-family: 'indie flower';
+    font-size: 2vw;
+    box-sizing: border-box;
+}
+.company_name h1{
+    margin-top: 4vw;
+}
+.menu{
+    width: 40%;
+    display: flex;
+    justify-content: flex-end;
+}
+.menu-list{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.5vw;
+}
+button{
+    background: none;
+    border: none;
+}
+.menubar{
+    display: none;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+    font-weight: 700;
+}
+.home{
+    height: 3vw;
+    width: 3vw;
+}
+.active{
+    color: #ffd43b;
+    border-bottom: 3px solid #ffd43b;
+    padding: 0.2vw;
+}
+.menu li{
+    list-style: none;
+    text-decoration: none;
+}
+.link:hover{
+    background-color: #ffd43b;
+    color: #333;
+    box-shadow: 0 0 5px #7d7896;
+    font-size: 1.6vw;
+    border-radius: 3px;
+    padding: 0.5vw;
+}
+.home:hover{
+    border: 1px solid gold;
+    box-shadow: 0 0 5px gold;
+    filter: drop-shadow(0 0 10px gold);
+    height: 3.2vw;
+    width: 3.2vw;
+}
+.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+
+/* acceuil*/
+.hero{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: url('../images/img7.jpg');
+    background-size: cover;
+    background-position: center;
+    filter: blur(2px) brightness(0.8) grayscale(40%);
+    z-index: -1;
+}
+.hero_content{
+    width: 40%;
+    text-align: center;
+    font-size: 2vw;
+}
+.hero_content p{
+    font-size: 1.3vw;
+}
+span{
+    color: gold;
+}
+
+/*nos acquisitions*/
+.Acquisitions{
+    height: 90vh;
+    color: black;
+    padding: 4vw 10vw;
+    width: 100%;
+    box-sizing: border-box;
+}
+.cards{
+    display: flex;
+    justify-content: space-between;
+}
+.card{
+    width: 30%;
+    text-align: center;
+    font-size: larger;
+    font-weight: 500;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 70%;
+    border-radius: 1vw;
+    transition: ease-in 0.3s;
+}
+.card:hover{
+    box-shadow: 0 0 10px black;
+}
+.card img{
+    border-radius: 1vw 1vw 0 0;
+    width: 100%;
+    height: 15vw;
+
+}
+.card div{
+    height: 1px;
+    width: 20%;
+    background-color: #333;
+    margin-bottom: 0.5vw;
+}
+/*une equpe pro*/
+.the_mother_fckers{
+    display: flex;
+    height: 100vh;
+    background-color: #fff;
+    box-sizing: border-box;
+    margin-bottom: 5%;
+    padding-bottom: 1.5vw;
+
+}
+.the_mother_fckers img{
+    width: 50%;
+}
+.equipe{
+    width: 50%;
+    padding: 10% 2vw;
+    box-sizing: border-box;
+    text-align: justify;
+    background-color: #333;
+    font-size: 2vw;
+}
+.equipe p{
+    font-size: 1.5vw;
+}
+
+/*comment section*/
+.testimony{
+    width: 100%;
+    padding: 1vw 10%;
+    color: black;
+    box-sizing: border-box;
+}
+.testimony h3{
+    border-bottom: 1px solid rgb(202, 200, 200);
+    margin-bottom: 2.5vw;
+    padding-bottom: 1vw ;
+}
+.commentaire{
+    display: flex;
+    justify-content: space-between;
+    padding: 2vw 10%;
+    width: 80%;
+    height: 8vw;
+    font-size: 1.2vw;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: white;
+    margin-bottom: 2vw;
+    border-radius: 1vw;
+
+}
+
+.comment-text{
+    width: 90%;
+}
+.comment-text svg{
+    width: 1.5vw;
+    height: 1.5vw;
+
+}
+
+.comment-profile{
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.comment-profile img{
+        height: 6vw;
+        width: 5vw;
+        border-radius: 3vw;        
+}
+.comment-profile h6{
+    margin: 0;
+}
+.comment-profile p{
+    margin: 0;
+}
+
+footer{
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5vw;
+    background-color: #333;
+    height: fit-content;
+    padding-top: 2vw;
+
+}

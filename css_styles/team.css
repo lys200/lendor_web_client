@@ -1,0 +1,62 @@
+.hero::before{
+    background-image: url(../images/pexels-fauxels-3183197.jpg);
+}
+.team_members{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+    padding: 10%;
+    box-sizing: border-box;
+}
+
+.team-member {
+    position: relative;
+    margin: 20px;
+    width: 70%;
+    text-align: center;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #fff;
+    transition: transform 0.3s;
+}
+.team-member img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+
+    
+}
+.team-member h3 {
+    margin: 10px 0 5px;
+    font-size: 1.2em;
+}
+.team-member p {
+    margin: 5px 0;
+    color: #777;
+}
+.team-member:hover {
+    transform: scale(1.5);
+    transition: 0.5s ease-in-out;
+    width: 100%;
+    z-index: 100;
+    display: flex;
+    box-shadow: 0 0 50vw black ;
+}
+.team-member:hover .details {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.details {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 10px;
+    box-sizing: border-box;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: opacity 0.3s, transform 0.3s;
+}
