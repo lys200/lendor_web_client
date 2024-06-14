@@ -47,7 +47,7 @@ h4{
 .social_icons svg{
     height: 2.2vw;
     width: 2vw;
-    margin: 0 1vw;
+    margin: 0.1vw;
     }
     
 .social_icons svg:hover{
@@ -76,4 +76,20 @@ footer{
     height: 30vw;
     width: 80%;
     margin-bottom: 4vw;
+}
+
+@media (max-width: 768px) {
+    .contact{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        text-align: center;
+    }
+    .social_icons {
+        justify-content: center;
+        width: 50%;
+        margin-left: 38%;
+
+    }
+
+
 }
