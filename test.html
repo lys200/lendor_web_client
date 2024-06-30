@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom File Input</title>
+    <style>
+        /* styles.css */
+body {
+    font-family: Arial, sans-serif;
+}
+
+form {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.file-upload-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.file-input {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.file-label {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.file-label:hover {
+    background-color: #0056b3;
+}
+
+.submit-button {
+    padding: 10px 20px;
+    background-color: #ffeb3b;
+    color: #000;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: #fdd835;
+}
+
+    </style>
+</head>
+<body>
+    <form>
+        <div class="file-upload-wrapper">
+            <input type="file" id="file-input" class="file-input" accept=".png, .jpg, .jpeg">
+            <label for="file-input" class="file-label">Choisir un fichier</label>
+        </div>
+        <button type="submit" class="submit-button">Soumettre</button>
+    </form>
+    <script> 
+        document.getElementById('file-input').addEventListener('change', function() {
+            var fileName = this.files[0].name;
+            var nextSibling = this.nextElementSibling;
+            nextSibling.innerText = fileName;
+        });
+        </script>
+</body>
+</html>
