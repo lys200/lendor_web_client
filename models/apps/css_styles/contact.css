@@ -73,7 +73,7 @@
     width: 50%;
 }
 .contact_form{
-    height: 40vh;
+    height: 52vh;
     width: 50%;
     box-sizing: border-box;
     padding-top: 0;
@@ -93,7 +93,7 @@ form{
 }
 input, textarea{
     margin-bottom: 2vw;
-    height: 3vw;
+    height: 16vw;
     border: none;
     border-bottom: 3px solid #ffd43b;
     background-color: rgba(210, 180, 140, 0.356);
@@ -115,9 +115,10 @@ input[type = 'submit']{
     font-weight: bold;
     border-radius: 0.4vw;
     color: #333;
+    margin: 0;
 }
 textarea{
-    height: 10vw;
+    height: 26vw;
 }
 input[type = 'submit']:hover{
     background-color: #333;
@@ -148,7 +149,7 @@ footer{
     
     .hero::before{
         position: absolute;
-        height: 110vh;
+        height: 200vh;
     }
     .Contact-wrapper{
         flex-direction: column;
@@ -184,11 +185,18 @@ footer{
         margin-top: 10vw;
     }
     input{
-        height: 10vw;
+        height: 7vw;
         margin-bottom: 4vw;
+        font-size: 2.5vw;
+
     }
     textarea{
         margin-bottom: 0;
+        height: 15vw;
+        font-size: 2.5vw;
+    }
+    ::placeholder{
+        font-size: 2.5vw;
     }
     input[type = 'submit']{
         margin: 6vw;
@@ -196,7 +204,7 @@ footer{
         height: 6vw;
     }
     form{
-        height: fit-content;
+        height: 50vh;
     }
     .boutons{
         margin: 0;

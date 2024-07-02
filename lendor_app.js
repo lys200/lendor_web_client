@@ -4,6 +4,7 @@ const path = require('path'); // module pour travailler avec le chemin complet d
 const bodyParser = require('body-parser'); // Middleware pour parser les corps de requêtes
 const nodemailer = require('nodemailer'); // Module pour envoyer des emails
 const multer = require('multer'); // Module pour gérer les téléchargements de fichiers
+const { error } = require('console');
 const port = 8080; // Port sur lequel le serveur écoute
 
 // Création de l'application Express
@@ -48,7 +49,7 @@ app.post('/submit-comment', upload.single('image'), (req, res) => {
             console.error('Erreur de l\'écriture du commentaire dans le fichier de destination.', err);
             res.status(500).send('Erreur interne du serveur');
             return;
-        }
+        } 
         res.status(200).send('Commentaire ajouté.');
     });
 });
@@ -63,7 +64,6 @@ app.get('/get-comments', (req, res) => {
         }
         else{
         const commentaires = data.trim().split('\n').map(line => JSON.parse(line)).slice(-10);
-        console.log(commentaires);
         res.json(commentaires);}
     });
 });
@@ -85,15 +85,34 @@ app.post('/submit-form', (req, res) => {
 				pass: 'yald fxwq hzpq sgia'
             }
         });
-
+        //configuration d'un email de confirmation au user
         const mailOptions = {
             from: 'nherlysemorisset@gmail.com',
             to: email,
             subject: 'Confirmation de réception de votre message',
             text: `Bonjour ${Nom},\n\nNous avons bien reçu votre message. Nous vous répondrons dans les plus brefs délais.\n\nCordialement,\nL'équipe`
         };
-
+        //configuration d'un email de confirmation a l'administrateur de l'agence
+        const mailOptions2 = {
+            from: 'nherlysemorisset@gmail.com',
+            to: 'nherlysemorisset@gmail.com',
+            subject: 'reception de nouvelle infos',
+            text: `Bonjour Monsieur,\n\n Vous avez recus un nouveau formulaire de contact.\n nom du user: ${Nom}\n Email de user: ${email}\n Message: ${message}. \n\nCordialement.\n`
+        };
+        
+        //envoi d'un email de confirmation de l'agnce au user
         transporter.sendMail(mailOptions, (error, info) => {
+            if (error) {
+                console.log("Erreur de submission du formulaire de contact.");
+                return res.status(500).send('Erreur du serveur');
+            }
+            res.json({ success: true, message: 'Message reçu et email de confirmation envoyé' });
+            alert('Nous avons envoyé un email a votre adresse, confimant que nous avons recu vos informations. ');
+            console.log("Message reçu et email de confirmation envoyé");
+        });
+
+        //envoi d'un email contenant les info du user au responsable de l'agnce
+        transporter.sendMail(mailOptions2, (error, info) =>{
             if (error) {
                 console.log("Erreur de submission du formulaire de contact.");
                 return res.status(500).send('Erreur du serveur');

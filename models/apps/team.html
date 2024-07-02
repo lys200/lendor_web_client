@@ -50,50 +50,109 @@
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#ffffff" d="M201.4 374.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 306.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"/></svg>
         </div>
     </section>
-     <section class="team_members">
-        
-        <div class="team-member">
-            <img src="images/10877.jpg" alt="Marie Dupont">
-            <h3>Marie Dupont</h3>
-            <p>Agent Immobilier Résidentiel</p>
-            <div class="details">
-                <p><span>Marie Dupont</span> possède plus de 10 ans d'expérience dans le secteur immobilier résidentiel...</p>
-                <button>
-                     Voir plus <span>+</span>
-                </button>
-            </div>
-        </div>
-        
-        <div class="team-member">
-            <img src="images/21147.jpg" alt="Jean Martin">
-            <h3>Jean Martin</h3>
-            <p>Agent Immobilier Commercial</p>
-            <div class="details">
+     <div class="container">
+        <h3>CLiquez sur le membre dont vous voulez afficher les informations.</h3>
+        <div class="team_image_gallery">
+          <div id="team-info" id="cadre">
+            <img
+              src="images/10877.jpg"
+              alt="Product Image"
+              class="product-main-img"
+              data-index="1"
+            />
+          </div>
+          <div class="product-thumbnail-container">
+            <div class="product-thumbnail active" >
+              <img
+                src="images/21147.jpg"
+                alt="thumbnail Image"
+                data-index="1"
+              />
+              <div class="details">
+                <h3>Jean Martin</h3>
+                <p>Agent Immobilier Commercial</p>
                 <p><span>Jean Martin</span> est expert en immobilier commercial avec une expérience de plus de 15 ans...</p>
                 <button>
                      Voir plus <span>+</span>
                 </button>
+              </div>
             </div>
-        </div>
-        
-        <div class="team-member">
-            <img src="images/9870.jpg" alt="Sophie Leblanc">
-            <h3>Sophie Leblanc</h3>
-            <p>Agent Immobilier de Luxe</p>
-            <div class="details">
-                <p><span>Sophie Leblanc</span> se spécialise dans les propriétés de luxe...</p>
-                <button>
-                     Voir plus <span>+</span>
-                </button>
+
+            <div class="product-thumbnail">
+                <img
+                    src="images/9870.jpg"
+                    alt="thumbnail Image"
+                    data-index="2"
+                />
+                <div class="details">
+                    <h3>Sophie Leblanc</h3>
+                    <p>Agent Immobilier de Luxe</p>
+                    <p><span>Sophie Leblanc</span> se spécialise dans les propriétés de luxe...</p>
+                    <button>
+                        Voir plus <span>+</span>
+                    </button>
+                </div>
             </div>
+            <div class="product-thumbnail">
+                <img
+                    src="images/femmenoir.jpg"
+                    alt="thumbnail Image"
+                    data-index="3"
+                />
+                <div class="details">
+                    <h3>Marie Dupont</h3>
+                    <h4>Agent Immobilier Résidentiel</h4>
+                    <p><span>Marie Dupont</span> possède plus de 10 ans d'expérience dans le secteur immobilier résidentiel...</p>
+                    <button>
+                        Voir plus <span>+</span>
+                    </button>
+                </div>
+            </div>
+            <div class="product-thumbnail">
+                <img
+                    src="images/10877.jpg"
+                    alt="thumbnail Image"
+                    data-index="4"
+                />
+                <div class="details">
+                    <h3>Sofie Delano</h3>
+                    <h4>Agent Immobilier Résidentiel</h4>
+                    <p><span>Marie Dupont</span> possède plus de 70 ans d'expérience dans le secteur immobilier résidentiel...</p>
+                    <button>
+                        Voir plus <span>+</span>
+                    </button>
+                </div>
+            </div>
+          </div>
         </div>
-     </section>
-    
+      </div>
     <footer>
         <p>&copy; 2024- Morisset Nherlyse</p>
     </footer>
     <script>
 
+        /*code pour la gallery*/
+        let team_info = document.getElementById('team-info');
+        let product_thumbnail = document.querySelectorAll('.product-thumbnail');
+        product_thumbnail.forEach((member) => {
+            member.addEventListener('click', () => {
+                    product_thumbnail.forEach((member) => {
+                        member.classList.remove('active');
+                    });
+                    team_info.innerHTML = '';
+                    // nav = document.getElementById("bar_de_navigation");
+                    // nav_footer = nav.cloneNode(true);
+                    member_cloned = member.cloneNode(true);
+                    team_info.appendChild(member_cloned);
+                    details = member_cloned.querySelector('.details');
+                    details.classList.add('display_info');
+                    member.classList.add('active');
+                    member.classList.add('product-down-animation');
+                    setTimeout(() => {
+                    member.classList.remove('product-down-animation');
+                    }, 500);
+        });
+        });
         /*fonction pour immobiliser la bar de navigation quand le user scroll*/
         window.onscroll = function() { toggleStickyNavbar() };
 
@@ -118,6 +177,9 @@
             navList.style.display = 'none';
         }
         });
+
+
+
     </script>
 </body>
 </html>
