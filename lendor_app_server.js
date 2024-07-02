@@ -97,7 +97,7 @@ app.post('/submit-form', (req, res) => {
             from: 'nherlysemorisset@gmail.com',
             to: 'nherlysemorisset@gmail.com',
             subject: 'reception de nouvelle infos',
-            text: `Bonjour Monsieur,\n\n Vous avez recus un nouveau formulaire de contact.\n nom du user: ${Nom}\n Email de user: ${email}\n Message: ${message}. \n\nCordialement.\n`
+            text: `Bonjour monsieur/madame,\n\n Vous avez recus un nouveau formulaire de contact.\n nom du user: ${Nom}\n Email de user: ${email}\n Message: ${message}. \n\nCordialement.\n`
         };
         
         //envoi d'un email de confirmation de l'agnce au user
